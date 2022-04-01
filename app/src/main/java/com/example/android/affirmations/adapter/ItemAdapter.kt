@@ -4,6 +4,7 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.android.affirmations.R
@@ -23,6 +24,7 @@ class ItemAdapter(
     // Menentukan class di dalam class lain disebut membuat class bertingkat.
     class ItemViewHolder(private val view: View) : RecyclerView.ViewHolder(view) {
         val textView: TextView = view.findViewById(R.id.item_title)
+        val imageView: ImageView = view.findViewById(R.id.item_image)
     }
 
     // method ini dipanggil utk membuat view holder baru untuk RecyclerView (saat tidak ada holder tampilan yang ada yang dapat digunakan kembali)
@@ -45,6 +47,7 @@ class ItemAdapter(
         // karena ID merupakan integer, dan yg hrs ditampilkan adalah String, maka gunakan getString()
         // getString() mrpkn method pada class Resources, yg instance Resources diperoleh melalui "context"
         holder.textView.text = context.resources.getString(item.stringResourceId)
+        holder.imageView.setImageResource(item.imageResourceId)
     }
 
     // return size dari dataset (dipanggil oleh layout manager)
