@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+<!--FrameLayout harus digunakan untuk menyimpan satu tampilan turunan.-->
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -6,7 +8,9 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-
+    <!--Setiap item di RecyclerView memiliki tata letak sendiri, yang Anda tentukan dalam file tata letak terpisah. -->
+    <!--memerlukan adapter yang mengambil instance Affirmation dari list yang ditampilkan oleh loadAffirmations(),
+    dan mengubahnya menjadi tampilan item list, sehingga dapat ditampilkan dalam RecyclerView.-->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_view"
         android:layout_width="match_parent"
